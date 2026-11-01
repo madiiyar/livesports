@@ -157,6 +157,6 @@ failure) (4), whole system (2), new element (3).
 
 ## UML class diagram
 
-![UML class diagram](C:\aitu\4 trim\sdp\assignment6\livesports\docs\uml.png)
+![UML class diagram](docs/uml.png)
 
 
