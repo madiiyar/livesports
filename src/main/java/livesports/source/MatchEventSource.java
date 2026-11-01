@@ -2,25 +2,19 @@ package livesports.source;
 
 import livesports.event.EventType;
 import livesports.event.MatchEvent;
-import livesports.observer.ListenerRegistry;
-import livesports.observer.Observer;
-import livesports.observer.Subject;
+import livesports.observer.AbstractSubject;
 
-public final class MatchEventSource implements Subject<MatchEvent> {
+public final class MatchEventSource extends AbstractSubject<MatchEvent> {
 
-    private final ListenerRegistry<MatchEvent> registry = new ListenerRegistry<>();
-
-    @Override
-    public void subscribe(EventType type, Observer<? super MatchEvent> observer) {
-        registry.subscribe(type, observer);
+    public void goal(String matchId, String teamId, String playerId, int minute) {
+        publish(new MatchEvent(EventType.GOAL, matchId, teamId, playerId, minute));
     }
 
-    @Override
-    public void unsubscribe(EventType type, Observer<? super MatchEvent> observer) {
-        registry.unsubscribe(type, observer);
+    public void foul(String matchId, String teamId, String playerId, int minute) {
+        publish(new MatchEvent(EventType.FOUL, matchId, teamId, playerId, minute));
     }
 
-    public void publish(MatchEvent event) {
-        registry.publish(event);
+    public void card(String matchId, String teamId, String playerId, int minute) {
+        publish(new MatchEvent(EventType.CARD, matchId, teamId, playerId, minute));
     }
 }
