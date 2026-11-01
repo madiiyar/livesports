@@ -27,6 +27,9 @@ public final class TotalSalaryVisitor implements Visitor<Integer> {
     @Override
     public Integer visitAnalyst(Analyst analyst) { return analyst.salary(); }
 
+    @Override
+    public Integer visitScout(Scout scout) { return scout.salary(); }
+
     private int sumOf(List<? extends Element> children) {
         int total = 0;
         for (Element child : children) {

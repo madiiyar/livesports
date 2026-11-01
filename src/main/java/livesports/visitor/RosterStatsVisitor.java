@@ -37,6 +37,9 @@ public final class RosterStatsVisitor implements Visitor<Void> {
     @Override
     public Void visitAnalyst(Analyst analyst) { staffCount++; return null; }
 
+    @Override
+    public Void visitScout(Scout scout) { staffCount++; return null; }
+
     public int playerCount() { return playerCount; }
     public int staffCount() { return staffCount; }
     public int totalGoals() { return totalGoals; }

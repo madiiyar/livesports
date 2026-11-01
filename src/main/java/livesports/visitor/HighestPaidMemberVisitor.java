@@ -28,6 +28,9 @@ public final class HighestPaidMemberVisitor implements Visitor<Optional<Member>>
     @Override
     public Optional<Member> visitAnalyst(Analyst analyst) { return Optional.of(analyst); }
 
+    @Override
+    public Optional<Member> visitScout(Scout scout) { return Optional.of(scout); }
+
     private Optional<Member> best(List<? extends Element> children) {
         Optional<Member> best = Optional.empty();
         for (Element child : children) {

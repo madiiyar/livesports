@@ -59,6 +59,14 @@ public final class JsonExportVisitor implements Visitor<String> {
                 + ",\"salary\":" + analyst.salary() + "}";
     }
 
+    @Override
+    public String visitScout(Scout scout) {
+        return "{\"type\":\"scout\",\"id\":" + quote(scout.id())
+                + ",\"name\":" + quote(scout.name())
+                + ",\"salary\":" + scout.salary()
+                + ",\"region\":" + quote(scout.region()) + "}";
+    }
+
     private String array(List<? extends Element> children) {
         StringJoiner joiner = new StringJoiner(",", "[", "]");
         for (Element child : children) {

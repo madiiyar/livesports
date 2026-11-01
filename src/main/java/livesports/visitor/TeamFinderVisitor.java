@@ -36,6 +36,9 @@ public final class TeamFinderVisitor implements Visitor<Optional<Team>> {
     @Override
     public Optional<Team> visitAnalyst(Analyst analyst) { return Optional.empty(); }
 
+    @Override
+    public Optional<Team> visitScout(Scout scout) { return Optional.empty(); }
+
     private Optional<Team> firstFound(List<? extends Element> children) {
         for (Element child : children) {
             Optional<Team> found = child.accept(this);

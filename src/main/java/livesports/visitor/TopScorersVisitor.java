@@ -36,6 +36,9 @@ public final class TopScorersVisitor implements Visitor<List<Player>> {
     @Override
     public List<Player> visitAnalyst(Analyst analyst) { return List.of(); }
 
+    @Override
+    public List<Player> visitScout(Scout scout) { return List.of(); }
+
     private List<Player> collect(List<? extends Element> children) {
         List<Player> result = new ArrayList<>();
         for (Element child : children) {

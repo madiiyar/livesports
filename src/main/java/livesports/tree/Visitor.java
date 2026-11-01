@@ -8,4 +8,5 @@ public interface Visitor<R> {
     R visitCoach(Coach coach);
     R visitPhysio(Physio physio);
     R visitAnalyst(Analyst analyst);
+    R visitScout(Scout scout);
 }
